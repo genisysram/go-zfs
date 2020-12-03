@@ -1,8 +1,5 @@
 language: go
-arch:
-    - amd64
-    - ppc64le
-dist: bionic
+
 sudo: required
 cache:
   directories:
@@ -12,8 +9,18 @@ branches:
   only:
     - master
 env:
-  - rel=0.6.5.11
+   - rel=0.6.5.11
+     arch: amd64
+     dist: xenial
   - rel=0.7.6
+     arch: amd64
+     dist: xenial
+  - rel=0.6.5.11
+    arch: ppc64le
+    dist: bionic
+  - rel=0.7.6
+    arch: ppc64le
+    dist: bionic
 go:
   - "1.10.x"
   - master
